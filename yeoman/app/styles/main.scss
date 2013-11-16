@@ -17,7 +17,8 @@ $white: #FFF;
 body {
     padding-top: 20px;
     padding-bottom: 20px;
-    background: url('/images/grey_wash_wall.png');
+    background: url("/images/bgblur.jpg") no-repeat center center fixed;
+    @include background-size(cover);
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -79,6 +80,23 @@ body {
 .card {
     background-color: $white;
     padding: 50px;
+
+    .logo {
+        width: 50%;
+        &.nomargins {
+            margin-bottom: -20px;
+            margin-top: -50px;
+        }
+    }
+}
+
+.yammer-logo {
+    background: url("/images/yammer-logo.png") no-repeat center center;
+    display: inline-block;
+    width: 140px;
+    height: 30px;
+    background-size: cover;
+    vertical-align: text-top;
 }
 
 .centered {
