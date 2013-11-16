@@ -1,6 +1,10 @@
 $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
+@import "compass/css3";
+@import "compass/utilities";
 @import 'sass-bootstrap/lib/bootstrap';
+
+$white: #FFF;
 
 .browsehappy {
     margin: 0.2em 0;
@@ -13,6 +17,7 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 body {
     padding-top: 20px;
     padding-bottom: 20px;
+    background: url('/images/grey_wash_wall.png');
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -65,6 +70,27 @@ body {
 
 .marketing p + h4 {
     margin-top: 28px;
+}
+
+// ------------------------
+/* Cards */
+// ------------------------
+
+.card {
+    background-color: $white;
+    padding: 50px;
+}
+
+.centered {
+    text-align: center;
+}
+
+.bordered {
+    @include border-radius(5px);
+}
+
+.shadowed {
+    @include single-box-shadow;
 }
 
 /* Responsive: Portrait tablets and up */
