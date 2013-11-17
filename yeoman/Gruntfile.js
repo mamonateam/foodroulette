@@ -347,12 +347,12 @@ module.exports = function (grunt) {
         'useminPrepare',
         'concurrent:dist',
         'autoprefixer',
-        'concat',
-        'cssmin',
-        'uglify',
+        //'concat',
+        //'cssmin',
+        //'uglify',
         'copy:dist',
-        'rev',
-        'usemin'
+        //'rev',
+        //'usemin'
     ]);
 
     grunt.registerTask('cordova-prepare', 'Prepare the native application', function() {

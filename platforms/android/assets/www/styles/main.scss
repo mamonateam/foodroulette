@@ -1,0 +1,225 @@
+$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+
+@import "compass/css3";
+@import "compass/utilities";
+@import 'sass-bootstrap/lib/bootstrap';
+
+$white: #FFF;
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* Space out content a bit */
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: url("/images/bgblur.jpg") no-repeat center center fixed;
+    @include background-size(cover);
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+    margin: 40px 0;
+}
+
+.marketing p + h4 {
+    margin-top: 28px;
+}
+
+// ------------------------
+/* Cards */
+// ------------------------
+
+.card {
+    background-color: $white;
+
+    .logo {
+        width: 50%;
+        &.nomargins {
+            margin-bottom: -20px;
+            margin-top: -50px;
+        }
+    }
+}
+
+.p50 {
+    padding: 50px;
+}
+
+.mt10 {
+    margin-top: 10px;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.yammer-logo {
+    background: url("/images/yammer-logo.png") no-repeat center center;
+    display: inline-block;
+    width: 140px;
+    height: 30px;
+    background-size: cover;
+    vertical-align: text-top;
+}
+
+.centered {
+    text-align: center;
+}
+
+.bordered {
+    @include border-radius(5px);
+}
+
+.shadowed {
+    @include single-box-shadow;
+}
+
+.shadow {
+    @include box-shadow(#777 0px 3px 1px 0px);
+}
+
+.text-shadow {
+    @include text-shadow(#ccc 0px 3px 2px);
+}
+
+.no-rounded {
+    border-radius: 0 !important;
+}
+
+.green-btn {
+    background-color: green;
+    color: $white;
+    border-color: darkgreen;
+}
+
+.text-pre-line {
+    white-space: pre-line;
+}
+
+input.card.form-control {
+    border-radius: 0;
+    // font-size: 20px;
+    // padding: 30px;
+}
+
+#interest-controls {
+}
+
+/* Yammer log-in button */
+
+.sign-in {
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #48aef1;
+    background-color: #48aef1;
+    background-image: -webkit-linear-gradient(top,#77c3f5,#30a4ef);
+    background-image: -moz-linear-gradient(top,#77c3f5,#30a4ef);
+    background-image: -ms-linear-gradient(top,#77c3f5,#30a4ef);
+    background-image: -o-linear-gradient(top,#77c3f5,#30a4ef);
+    background-image: linear-gradient(top,#77c3f5,#30a4ef);
+    border: 1px solid #0f7cc4;
+    -webkit-box-shadow: 0 1px 0px #fff,inset 0 1px 0px #a7d8f8;
+    box-shadow: 0 1px 0px #fff,inset 0 1px 0px #a7d8f8;
+    color: #084065;
+    text-shadow: 0 1px 0px #a7d8f8;
+    background-image: url(../images/yammer-logo.svg);
+    background-image: url(../images/yammer-logo.svg);
+    background-image: url(../images/yammer-logo.svg);
+    background-image: url(../images/yammer-logo.svg);
+    background-image: url(../images/yammer-logo.svg);
+    background-image: url(../images/yammer-logo.svg),-webkit-linear-gradient(top,#48aff3,#228ed5);
+    background-image: url(../images/yammer-logo.svg),-moz-linear-gradient(top,#48aff3,#228ed5);
+    background-image: url(../images/yammer-logo.svg),-ms-linear-gradient(top,#48aff3,#228ed5);
+    background-image: url(../images/yammer-logo.svg),-o-linear-gradient(top,#48aff3,#228ed5);
+    background-image: url(../images/yammer-logo.svg),linear-gradient(top,#48aff3,#228ed5);
+    background-position: 20px center,0 0;
+    -ms-background-position-x: 20px;
+    -ms-background-position-y: center;
+    background-repeat: no-repeat,repeat;
+    background-size: 10%,100%;
+    color: #fff;
+    font-family: Helvetica,Arial,sans-serif;
+    letter-spacing: 0.05em;
+    line-height: 1.5em;
+    margin: 50px auto 25px auto;
+    padding: 15px 25px 15px 60px;
+    text-shadow: 0 -1px 0 #084065;
+    font-size: 1.5em;
+    &:hover {
+        color: #fff;
+        text-decoration: none;
+    }
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 730px;
+    }
+
+    /* Remove the padding we set earlier */
+    .header,
+    .marketing,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 30px;
+    }
+    /* Remove the bottom border on the jumbotron for visual effect */
+    .jumbotron {
+        border-bottom: 0;
+    }
+}
