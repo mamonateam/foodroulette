@@ -1,16 +1,22 @@
 <div class="card p50 bordered centered shadowed">
   <h1 style="margin-top: 0"><small>Welcome to</small><br>Food Roulette</h1>
 
-  <img class="logo" src="images/burger.png">
+  <img class="logo nomargins" src="images/burger.png">
 
-  <p class="lead">Lipsum...</p>
+  <p class="lead">Now you're ready to meet new people thanks to <strong>Yammer</strong>! Every day you can decide wheter you want to participate or you're too busy for it.</p>
 
-  <button type="button" class="btn btn-lg" ng-class="{'btn-success': me.food_roulette.is_eating, 'btn-default': !me.food_roulette.is_eating}" ng-click="is_eating(true)">
-    <span class="text-pre-line" ng-hide="me.food_roulette.is_eating">Yeah! Count on me for tomorrow!</span>
-    <span class="text-pre-line" ng-show="me.food_roulette.is_eating">Great!!</span>
+  <button type="button" class="btn btn-lg block" ng-class="{'btn-success': me.food_roulette.is_eating, 'btn-default': !me.food_roulette.is_eating}" ng-click="is_eating(true)">
+    <span class="text-pre-line" ng-hide="me.food_roulette.is_eating">Yeah, I'm in!</span>
+    <span class="text-pre-line" ng-show="me.food_roulette.is_eating">Great! Come back by 11 AM</span>
   </button>
   <br>
-  <button type="button" class="btn btn-link" ng-click="is_eating(false)">Sorry, I'm busy tomorrow...</button>
+  <button type="button" class="btn btn-link mt10" ng-click="is_eating(false)">
+    Sorry, I'm busy...
+  </button>
+  <p>
+    <hr>
+    <small>Remember: You can change your mind as much as you can before 11 AM.</small>
+  </p>
 </div>
 
 <div class="logout centered">
