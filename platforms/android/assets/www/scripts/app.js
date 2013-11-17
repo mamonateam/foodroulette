@@ -11,7 +11,7 @@ angular
     'LocalStorageModule'
   ])
 
-  .constant('PATHS', {    
+  .constant('PATHS', {
 		LOGIN: '/login',
     LOGIN_MD5: '/login/:md5',
 		INTERESTS: '/interests',
@@ -21,7 +21,7 @@ angular
 	})
 
   .constant('CONFIG', {
-    backend: 'http://ch-foodroulette.herokuapp.com/api'
+    backend: 'http://ch-foodroulette.herokuapp.com/api/v1'
   })
 
   .factory('foodrouletteInterceptor', ['$q', '$location', 'PATHS', 'localStorageService',
@@ -30,10 +30,10 @@ angular
       'request': function(config) {
         var md5 = LocalStorage.get('md5');
 
-        if(md5 && angular.isObject(config.data))
+        if(md5)
           config.url += "?token_md5=" + md5;
 
-        console.log('read md5:', md5);
+        // console.log('read md5:', md5);
 
         return config || $q.when(config);
       },

@@ -1,24 +1,28 @@
 angular.module('foodroulette')
-.factory('FRUser', ['$http', 'CONFIG',
-  function ($http, CONFIG) {
+.factory('FRUser', ['$http', '$q', 'CONFIG',
+  function ($http, $q, CONFIG) {
       var me;
 
     function getMe() {
+      var response = $q.defer();
+
       if(me)
-        return me;
+        response.resolve(me);
       else
-      return me = $http.get(CONFIG.backend + "/user/me");
+        $http.get(CONFIG.backend + "/user/me").success(function(data) {
+          me = data;
+          response.resolve(me);
+        });
+
+      return response.promise;
     }
 
     function getUser(id) {
-      return $http.get({url: CONFIG.backend + "/user/" + id});
+      return $http.get(CONFIG.backend + "/user/" + id);
     }
 
     function update() {
-      return $http.post({
-        url: CONFIG.backend + "/user/me",
-        data: me
-      });
+      return $http.post(CONFIG.backend + "/user/me", me);
     }
 
     return {
@@ -29,4 +33,4 @@ angular.module('foodroulette')
       update: update
     };
   }
-])
+]);
