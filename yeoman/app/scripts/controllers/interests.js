@@ -30,11 +30,14 @@ angular.module('foodroulette')
 				}							
 			];
 
+			var me = {};
+
 			/*
 			// We get all available interests list
 			$http.get({url: "scripts/fakedata/interests.json"}).then(function(allInterests) {
 				// We get user interests
 				FRUser.get().then(function(user) {
+					me = user;
 					if(user && user.interests) {
 						$scope.interests = {};
 
@@ -49,6 +52,13 @@ angular.module('foodroulette')
 				});	
 			});
 			*/
+
+			$scope.updateInterests = function() {
+				angular.forEach($scope.interests, function(val, key) {
+					me.interests.push(key);
+				});
+				FRUser.set(me); 
+			}
 			
 			$scope.interests = fake_interests;
 			
