@@ -89,6 +89,10 @@ body {
     }
 }
 
+.p10 {
+    padding: 10px;
+}
+
 .p50 {
     padding: 50px;
 }
@@ -123,7 +127,7 @@ body {
 }
 
 .shadow {
-    @include box-shadow(#777 0px 3px 1px 0px);
+    @include box-shadow(#777 0px 3px 1px 0px, #777777 0px 0px 1px 0px);
 }
 
 .text-shadow {
@@ -142,6 +146,10 @@ body {
 
 .text-pre-line {
     white-space: pre-line;
+}
+
+.block {
+    width: 100%;
 }
 
 input.card.form-control {
@@ -198,6 +206,79 @@ input.card.form-control {
     &:hover {
         color: #fff;
         text-decoration: none;
+    }
+}
+
+.card.roulette-card {
+    padding: 10px;
+
+    .basic {
+        img {
+            width: 40%;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .basic-data {
+            width: 58%;
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+
+    .message {
+        padding-top: 10px;
+        textarea {
+            margin-bottom: 10px;
+        }
+        button {
+            width: 48%;
+            &:last-child{
+                margin-left: 2.5%;
+            }
+        }
+    }
+
+    .interests {
+        .interests-wrapper {
+            overflow: hidden;
+
+            &.collapsed {
+                height: 70px;
+            }
+        }
+
+        .interest {
+            padding: 5px;
+            text-align: center;
+            display: inline-block;
+            width: 49%;
+            margin-bottom: 6px;
+            background-color: #AAA;
+            color: $white;
+
+            &:nth-child(even) {
+                margin-left: 2%;
+            }
+        }
+    }
+
+    &.front {
+        position: absolute;
+        z-index: 2;
+        top: 80px;
+    }
+
+    &.back {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .sign-in {
+        font-size: 1.1em;
+        padding-right: 10px;
+        padding-left: 40px;
     }
 }
 

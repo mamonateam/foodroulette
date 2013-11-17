@@ -9810,23 +9810,29 @@ body {
 
 /* line 92, ../../app/styles/main.scss */
 
+.p10 {
+  padding: 10px;
+}
+
+/* line 96, ../../app/styles/main.scss */
+
 .p50 {
   padding: 50px;
 }
 
-/* line 96, ../../app/styles/main.scss */
+/* line 100, ../../app/styles/main.scss */
 
 .mt10 {
   margin-top: 10px;
 }
 
-/* line 100, ../../app/styles/main.scss */
+/* line 104, ../../app/styles/main.scss */
 
 .mt20 {
   margin-top: 20px;
 }
 
-/* line 104, ../../app/styles/main.scss */
+/* line 108, ../../app/styles/main.scss */
 
 .yammer-logo {
   background: url("../images/yammer-logo.png") no-repeat center center;
@@ -9837,13 +9843,13 @@ body {
   vertical-align: text-top;
 }
 
-/* line 113, ../../app/styles/main.scss */
+/* line 117, ../../app/styles/main.scss */
 
 .centered {
   text-align: center;
 }
 
-/* line 117, ../../app/styles/main.scss */
+/* line 121, ../../app/styles/main.scss */
 
 .bordered {
   -ms-border-radius: 5px;
@@ -9851,31 +9857,31 @@ body {
   border-radius: 5px;
 }
 
-/* line 121, ../../app/styles/main.scss */
+/* line 125, ../../app/styles/main.scss */
 
 .shadowed {
   box-shadow: 0px 0px 5px #333333;
 }
 
-/* line 125, ../../app/styles/main.scss */
+/* line 129, ../../app/styles/main.scss */
 
 .shadow {
-  box-shadow: #777777 0px 3px 1px 0px;
+  box-shadow: #777777 0px 3px 1px 0px, #777777 0px 0px 1px 0px;
 }
 
-/* line 129, ../../app/styles/main.scss */
+/* line 133, ../../app/styles/main.scss */
 
 .text-shadow {
   text-shadow: #cccccc 0px 3px 2px;
 }
 
-/* line 133, ../../app/styles/main.scss */
+/* line 137, ../../app/styles/main.scss */
 
 .no-rounded {
   border-radius: 0 !important;
 }
 
-/* line 137, ../../app/styles/main.scss */
+/* line 141, ../../app/styles/main.scss */
 
 .green-btn {
   background-color: green;
@@ -9883,13 +9889,19 @@ body {
   border-color: darkgreen;
 }
 
-/* line 143, ../../app/styles/main.scss */
+/* line 147, ../../app/styles/main.scss */
 
 .text-pre-line {
   white-space: pre-line;
 }
 
-/* line 147, ../../app/styles/main.scss */
+/* line 151, ../../app/styles/main.scss */
+
+.block {
+  width: 100%;
+}
+
+/* line 155, ../../app/styles/main.scss */
 
 input.card.form-control {
   border-radius: 0;
@@ -9897,7 +9909,7 @@ input.card.form-control {
 
 /* Yammer log-in button */
 
-/* line 158, ../../app/styles/main.scss */
+/* line 166, ../../app/styles/main.scss */
 
 .sign-in {
   border-radius: 3px;
@@ -9935,17 +9947,118 @@ input.card.form-control {
   font-size: 1.5em;
 }
 
-/* line 198, ../../app/styles/main.scss */
+/* line 206, ../../app/styles/main.scss */
 
 .sign-in:hover {
   color: #fff;
   text-decoration: none;
 }
 
+/* line 212, ../../app/styles/main.scss */
+
+.card.roulette-card {
+  padding: 10px;
+}
+
+/* line 216, ../../app/styles/main.scss */
+
+.card.roulette-card .basic img {
+  width: 40%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* line 221, ../../app/styles/main.scss */
+
+.card.roulette-card .basic .basic-data {
+  width: 58%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* line 228, ../../app/styles/main.scss */
+
+.card.roulette-card .message {
+  padding-top: 10px;
+}
+
+/* line 230, ../../app/styles/main.scss */
+
+.card.roulette-card .message textarea {
+  margin-bottom: 10px;
+}
+
+/* line 233, ../../app/styles/main.scss */
+
+.card.roulette-card .message button {
+  width: 48%;
+}
+
+/* line 235, ../../app/styles/main.scss */
+
+.card.roulette-card .message button:last-child {
+  margin-left: 2.5%;
+}
+
+/* line 242, ../../app/styles/main.scss */
+
+.card.roulette-card .interests .interests-wrapper {
+  overflow: hidden;
+}
+
+/* line 245, ../../app/styles/main.scss */
+
+.card.roulette-card .interests .interests-wrapper.collapsed {
+  height: 70px;
+}
+
+/* line 250, ../../app/styles/main.scss */
+
+.card.roulette-card .interests .interest {
+  padding: 5px;
+  text-align: center;
+  display: inline-block;
+  width: 49%;
+  margin-bottom: 6px;
+  background-color: #AAA;
+  color: white;
+}
+
+/* line 259, ../../app/styles/main.scss */
+
+.card.roulette-card .interests .interest:nth-child(even) {
+  margin-left: 2%;
+}
+
+/* line 265, ../../app/styles/main.scss */
+
+.card.roulette-card.front {
+  position: absolute;
+  z-index: 2;
+  top: 80px;
+}
+
+/* line 271, ../../app/styles/main.scss */
+
+.card.roulette-card.back {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 480px) {
+  /* line 278, ../../app/styles/main.scss */
+
+  .sign-in {
+    font-size: 1.1em;
+    padding-right: 10px;
+    padding-left: 40px;
+  }
+}
+
 /* Responsive: Portrait tablets and up */
 
 @media screen and (min-width: 768px) {
-  /* line 206, ../../app/styles/main.scss */
+  /* line 287, ../../app/styles/main.scss */
 
   .container {
     max-width: 730px;
@@ -9953,7 +10066,7 @@ input.card.form-control {
 
   /* Remove the padding we set earlier */
 
-  /* line 213, ../../app/styles/main.scss */
+  /* line 294, ../../app/styles/main.scss */
 
   .header,
   .marketing,
@@ -9964,7 +10077,7 @@ input.card.form-control {
 
   /* Space out the masthead */
 
-  /* line 218, ../../app/styles/main.scss */
+  /* line 299, ../../app/styles/main.scss */
 
   .header {
     margin-bottom: 30px;
@@ -9972,7 +10085,7 @@ input.card.form-control {
 
   /* Remove the bottom border on the jumbotron for visual effect */
 
-  /* line 222, ../../app/styles/main.scss */
+  /* line 303, ../../app/styles/main.scss */
 
   .jumbotron {
     border-bottom: 0;
