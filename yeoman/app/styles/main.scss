@@ -149,6 +149,54 @@ input.card.form-control {
 #interest-controls {
 }
 
+/* Yammer log-in button */
+
+.sign-in {
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #48aef1;
+    background-color: #48aef1;
+    background-image: -webkit-linear-gradient(top,#77c3f5,#30a4ef);
+    background-image: -moz-linear-gradient(top,#77c3f5,#30a4ef);
+    background-image: -ms-linear-gradient(top,#77c3f5,#30a4ef);
+    background-image: -o-linear-gradient(top,#77c3f5,#30a4ef);
+    background-image: linear-gradient(top,#77c3f5,#30a4ef);
+    border: 1px solid #0f7cc4;
+    -webkit-box-shadow: 0 1px 0px #fff,inset 0 1px 0px #a7d8f8;
+    box-shadow: 0 1px 0px #fff,inset 0 1px 0px #a7d8f8;
+    color: #084065;
+    text-shadow: 0 1px 0px #a7d8f8;
+    background-image: url(../images/yammer-logo.svg);
+    background-image: url(../images/yammer-logo.svg);
+    background-image: url(../images/yammer-logo.svg);
+    background-image: url(../images/yammer-logo.svg);
+    background-image: url(../images/yammer-logo.svg);
+    background-image: url(../images/yammer-logo.svg),-webkit-linear-gradient(top,#48aff3,#228ed5);
+    background-image: url(../images/yammer-logo.svg),-moz-linear-gradient(top,#48aff3,#228ed5);
+    background-image: url(../images/yammer-logo.svg),-ms-linear-gradient(top,#48aff3,#228ed5);
+    background-image: url(../images/yammer-logo.svg),-o-linear-gradient(top,#48aff3,#228ed5);
+    background-image: url(../images/yammer-logo.svg),linear-gradient(top,#48aff3,#228ed5);
+    background-position: 20px center,0 0;
+    -ms-background-position-x: 20px;
+    -ms-background-position-y: center;
+    background-repeat: no-repeat,repeat;
+    background-size: 10%,100%;
+    color: #fff;
+    font-family: Helvetica,Arial,sans-serif;
+    letter-spacing: 0.05em;
+    line-height: 1.5em;
+    margin: 50px auto 25px auto;
+    padding: 15px 25px 15px 60px;
+    text-shadow: 0 -1px 0 #084065;
+    font-size: 1.5em;
+    &:hover {
+        color: #fff;
+        text-decoration: none;
+    }
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .container {
