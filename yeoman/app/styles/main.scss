@@ -25,6 +25,14 @@ body {
     @include background-size(cover);
 }
 
+.bing-logo {
+    background: url("../images/bing.png") no-repeat center center;
+    width: 70px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
