@@ -1,15 +1,18 @@
 'use strict';
 
+angular.module('LocalStorageModule').value('prefix', 'foodroulette');
 angular
   .module('foodroulette', [
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngRoute'
+    'ngRoute',
+    'LocalStorageModule'
   ])
 
-  .constant('PATHS', {
+  .constant('PATHS', {    
 		LOGIN: '/login',
+    LOGIN_MD5: '/login/:md5',
 		INTERESTS: '/interests',
 		FOOD: '/food',
 		IMIN: '/imin',
@@ -31,6 +34,10 @@ angular
       .when(PATHS.LOGIN, {
       	templateUrl: 'views/login.html',
       	controller: 'LoginCtrl'
+      })
+      .when(PATHS.LOGIN_MD5, {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl'
       })
       .when(PATHS.INTERESTS, {
       	templateUrl: 'views/interests.html',
