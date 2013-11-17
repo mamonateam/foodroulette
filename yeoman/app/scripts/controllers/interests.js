@@ -27,10 +27,12 @@ angular.module('foodroulette')
 				{
 					title: "Poker",
 					status: false
-				}							
+				}
 			];
 
-			var me = {};
+			var me = {
+				interests: []
+			};
 
 			/*
 			// We get all available interests list
@@ -48,19 +50,29 @@ angular.module('foodroulette')
 								status: _.contains(user.interests, allInterests[i]);
 							})
 						}
-					}	
-				});	
+					}
+				});
 			});
 			*/
 
 			$scope.updateInterests = function() {
-				angular.forEach($scope.interests, function(val, key) {
-					me.interests.push(key);
+				angular.forEach($scope.interests, function(interest) {
+					if(interest.status)
+						me.interests.push(interest.title);
 				});
-				FRUser.set(me); 
+				FRUser.set(me);
+				console.log('updating', me);
 			}
-			
+
+			$scope.enable = function(interest) {
+				interest.status = true;
+			};
+
+			$scope.disable = function(interest) {
+				interest.status = false;
+			};
+
+			// Init
 			$scope.interests = fake_interests;
-			
 		}
 	]);
