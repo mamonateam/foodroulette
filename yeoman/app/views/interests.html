@@ -1,0 +1,21 @@
+<h1 class='centered'>Interests</h1>
+
+<div class="input-group input-group-lg card shadow">
+  <span class="input-group-addon no-rounded">
+    <span class="glyphicon glyphicon-search"></span>
+  </span>
+
+  <input class="form-control no-rounded" ng-model="search">
+
+  <span class="input-group-btn" ng-show="search">
+    <button class="btn btn-default no-rounded" type="button">&times;</button>
+  </span>
+</div>
+
+<div ng-repeat="(interest, selected) in interests | filter:search" class="input-group input-group-lg card shadow mt10">
+  <div class="form-control no-rounded">{{interest}}</div>
+  <span class="input-group-btn">
+    <button ng-click="enable(interest)" ng-hide="selected" class="btn btn-default no-rounded" type="button">+</button>
+    <button ng-click="disable(interest)" ng-show="selected" class="btn btn-default no-rounded green-btn" type="button">✓</button>
+  </span>
+</div>
