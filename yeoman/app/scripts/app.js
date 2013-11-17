@@ -7,6 +7,7 @@ angular
     'ngResource',
     'ngSanitize',
     'ngRoute',
+    'cordova',
     'LocalStorageModule'
   ])
 

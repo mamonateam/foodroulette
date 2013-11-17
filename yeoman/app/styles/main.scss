@@ -17,7 +17,7 @@ $white: #FFF;
 body {
     padding-top: 20px;
     padding-bottom: 20px;
-    background: url("/images/bgblur.jpg") no-repeat center center fixed;
+    background: url("../images/bgblur.jpg") no-repeat center center fixed;
     @include background-size(cover);
 }
 
@@ -106,7 +106,7 @@ body {
 }
 
 .yammer-logo {
-    background: url("/images/yammer-logo.png") no-repeat center center;
+    background: url("../images/yammer-logo.png") no-repeat center center;
     display: inline-block;
     width: 140px;
     height: 30px;

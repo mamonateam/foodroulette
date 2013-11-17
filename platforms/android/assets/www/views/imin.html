@@ -1,0 +1,14 @@
+<div class="card p50 bordered centered shadowed">
+  <h1 style="margin-top: 0"><small>Welcome to</small><br>Food Roulette</h1>
+
+  <img class="logo" src="images/burger.png">
+
+  <p class="lead">Lipsum...</p>
+
+  <button type="button" class="btn btn-lg" ng-class="{'btn-success': me.food_roulette.imin, 'btn-default': !me.food_roulette.imin}" ng-click="imin(true)">
+    <span class="text-pre-line" ng-hide="me.food_roulette.imin">Yeah! Count on me for tomorrow!</span>
+    <span class="text-pre-line" ng-show="me.food_roulette.imin">Great!!</span>
+  </button>
+  <br>
+  <button type="button" class="btn btn-link" ng-click="imin(false)">Sorry, I'm busy tomorrow...</button>
+</div>
