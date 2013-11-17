@@ -15,10 +15,11 @@ angular.module('foodroulette')
     return $http.get({url: CONFIG.backend + "/user/" + id});
   }
 
-  function sendToken(token) {
+  function sendToken(yammer_user_id, token) {
     return $http.post({
       url: CONFIG.backend + "/user/register",
       data: {
+        yammer_id: yammer_user_id,        
         token: token
       }
     });
