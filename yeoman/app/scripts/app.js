@@ -23,23 +23,25 @@ angular
     backend: 'http://ch-foodroulette.herokuapp.com/api'
   })
 
-  .factory('foodrouletteInterceptor', ['$q', '$location', 'PATHS', 'LocalStorageModule',
+  .factory('foodrouletteInterceptor', ['$q', '$location', 'PATHS', 'localStorageService',
     function($q, $location, PATHS, LocalStorage){
     return {
       'request': function(config) {
         var md5 = LocalStorage.get('md5');
 
-        if(angular.isObject(config.data))
-          config.data.md5 = md5;
+        if(md5 && angular.isObject(config.data))
+          config.url += "?token_md5=" + md5;
 
-        console.log('adding md5 to config', md5, config);
+        console.log('read md5:', md5);
 
         return config || $q.when(config);
       },
 
       'responseError': function (rejection) {
         console.log('response rejection', rejection);
-        $location.path(PATHS.LOGIN);
+        if(rejection.status == 403) {
+          $location.path(PATHS.LOGIN);
+        }
         return $q.reject(rejection);
       }
     };
