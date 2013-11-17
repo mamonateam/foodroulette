@@ -13,9 +13,9 @@
         <button type="button" class="btn btn-success block" ng-show="!friend.messaging" ng-click="friend.messaging = true">Send Message</button>
       </div>
       <div class="message" ng-show="friend.messaging">
-        <textarea class="form-control" rows="4"></textarea>
-        <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> Send</button>
-        <button type="button" class="btn btn-danger" ng-click="friend.messaging = false"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+        <textarea class="form-control" rows="4" ng-model="friend.message"></textarea>
+        <button type="button" class="btn btn-success" ng-click="sendMessage(friend)"><span class="glyphicon glyphicon-ok"></span> Send</button>
+        <button type="button" class="btn btn-danger" ng-click="cancelMessage(friend)"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
       </div>
     </div>
     <hr>

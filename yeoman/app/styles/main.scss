@@ -131,7 +131,7 @@ body {
 }
 
 .shadow {
-    @include box-shadow(#777 0px 3px 1px 0px, #777777 0px 0px 1px 0px);
+    @include box-shadow(#555 0px 3px 1px 0px, #555 0px 0px 1px 0px);
 }
 
 .text-shadow {
@@ -146,6 +146,14 @@ body {
     background-color: green;
     color: $white;
     border-color: darkgreen;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: green;
+        color: $white;
+        border-color: darkgreen;
+    }
 }
 
 .text-pre-line {
@@ -274,6 +282,10 @@ input.card.form-control {
         z-index: 2;
         top: 80px;
         width: 100%;
+
+        &.shadow {
+            @include box-shadow(#777 0px 3px 1px 0px, #555 0px -4px 11px 2px);
+        }
     }
 
     &.back {
