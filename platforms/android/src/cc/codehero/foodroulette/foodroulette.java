@@ -20,6 +20,9 @@
 package cc.codehero.foodroulette;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.webkit.WebView;
+
 import org.apache.cordova.*;
 
 public class foodroulette extends CordovaActivity 
@@ -32,6 +35,23 @@ public class foodroulette extends CordovaActivity
         // Set by <content src="index.html" /> in config.xml
         super.loadUrl(Config.getStartUrl());
         //super.loadUrl("file:///android_asset/www/index.html")
+        this.appView.setWebViewClient(new CordovaWebViewClient(this, this.appView) {
+
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+
+                if(url.contains("http://localhost:9000/#/login")) {
+                     url = url.replace("http://localhost:9000/", "file:///android_asset/www/index.html)");
+                     Log.d("DEBUG", url);
+                     return true;
+                } else {
+                	//view.loadUrl(url);
+                	return super.shouldOverrideUrlLoading(view, url);
+                }
+
+            }
+
+        });
     }
 }
 
