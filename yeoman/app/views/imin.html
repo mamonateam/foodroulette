@@ -5,10 +5,10 @@
 
   <p class="lead">Lipsum...</p>
 
-  <button type="button" class="btn btn-lg" ng-class="{'btn-success': me.food_roulette.imin, 'btn-default': !me.food_roulette.imin}" ng-click="imin(true)">
-    <span class="text-pre-line" ng-hide="me.food_roulette.imin">Yeah! Count on me for tomorrow!</span>
-    <span class="text-pre-line" ng-show="me.food_roulette.imin">Great!!</span>
+  <button type="button" class="btn btn-lg" ng-class="{'btn-success': me.food_roulette.is_eating, 'btn-default': !me.food_roulette.is_eating}" ng-click="is_eating(true)">
+    <span class="text-pre-line" ng-hide="me.food_roulette.is_eating">Yeah! Count on me for tomorrow!</span>
+    <span class="text-pre-line" ng-show="me.food_roulette.is_eating">Great!!</span>
   </button>
   <br>
-  <button type="button" class="btn btn-link" ng-click="imin(false)">Sorry, I'm busy tomorrow...</button>
+  <button type="button" class="btn btn-link" ng-click="is_eating(false)">Sorry, I'm busy tomorrow...</button>
 </div>
