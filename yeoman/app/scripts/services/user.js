@@ -19,13 +19,13 @@ angular.module('foodroulette')
     }
 
     function sendToken(yammer_user_id, token) {
-      return $http.post({
-        url: CONFIG.backend + "/user/register",
-        data: {
+      return $http.post(
+        CONFIG.backend + "/user/register",
+        {
           yammer_id: yammer_user_id,
           token: token
         }
-      });
+      );
     }
 
     function update() {
