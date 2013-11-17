@@ -23,10 +23,33 @@ angular
     backend: 'http://ch-foodroulette.herokuapp.com/api'
   })
 
+  .factory('foodrouletteInterceptor', ['$q', '$location', 'PATHS', 'LocalStorageModule',
+    function($q, $location, PATHS, LocalStorage){
+    return {
+      'request': function(config) {
+        var md5 = LocalStorage.get('md5');
+
+        if(angular.isObject(config.data))
+          config.data.md5 = md5;
+
+        console.log('adding md5 to config', md5, config);
+
+        return config || $q.when(config);
+      },
+
+      'responseError': function (rejection) {
+        console.log('response rejection', rejection);
+        $location.path(PATHS.LOGIN);
+        return $q.reject(rejection);
+      }
+    };
+  }])
+
   .config(['$httpProvider',function(provider){
     provider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
     provider.defaults.useXDomain = true;
     delete provider.defaults.headers.common['X-Requested-With'];
+    provider.interceptors.push('foodrouletteInterceptor');
   }])
 
   .config(function ($routeProvider, PATHS) {

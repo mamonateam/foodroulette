@@ -56,11 +56,11 @@ angular.module('foodroulette')
 			*/
 
 			$scope.updateInterests = function() {
+				me.interests = [];
 				angular.forEach($scope.interests, function(interest) {
 					if(interest.status)
 						me.interests.push(interest.title);
 				});
-				FRUser.set(me);
 				console.log('updating', me);
 			}
 

@@ -42,7 +42,7 @@ angular.module('foodroulette')
 				// We get user food interests
 				FRUser.get().then(function(user) {
 					me = user;
-					
+
 					if(user && user.food_roulette && user.food_roulette.food_interests) {
 						$scope.foods = {};
 						// convert from array structure to object array structure
@@ -57,13 +57,14 @@ angular.module('foodroulette')
 			});
 			*/
 
-			$scope.updateFoods = function() {
+			$scope.save = function() {
 				angular.forEach($scope.foods, function(food) {
+					me.food_roulette.food_interests = [];
 					if(food.status)
 						me.food_roulette.food_interests.push(food.title);
 				});
-				FRUser.set(me);
-				console.log('updating', me);
+				console.log('updating', me, 'and saving...');
+				FRUser.update();
 			}
 
 			$scope.enable = function(food) {
