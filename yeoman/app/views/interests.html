@@ -8,16 +8,16 @@
   <input class="form-control no-rounded" ng-model="search">
 
   <span class="input-group-btn" ng-show="search">
-    <button class="btn btn-default no-rounded" type="button">&times;</button>
+    <button ng-click="search=''" class="btn btn-default no-rounded" type="button">&times;</button>
   </span>
 </div>
 
 <div>
-  <div ng-repeat="(interest, selected) in interests | filter:search" class="input-group input-group-lg card shadow mt10">
-    <div class="form-control no-rounded">{{interest}}</div>
+  <div ng-repeat="interest in interests | filter:search" class="input-group input-group-lg card shadow mt10">
+    <div class="form-control no-rounded">{{interest.title}}</div>
     <span class="input-group-btn">
-      <button ng-click="enable(interest)" ng-hide="selected" class="btn btn-default no-rounded" type="button">+</button>
-      <button ng-click="disable(interest)" ng-show="selected" class="btn btn-default no-rounded green-btn" type="button">✓</button>
+      <button ng-click="enable(interest)" ng-hide="interest.status" class="btn btn-default no-rounded" type="button">+</button>
+      <button ng-click="disable(interest)" ng-show="interest.status" class="btn btn-default no-rounded green-btn" type="button">✓</button>
     </span>
   </div>
 </div>
@@ -25,11 +25,11 @@
 <div id="interest-controls" class="mt20 pull-right">
   <div class="btn-toolbar" role="toolbar">
     <div class="btn-group btn-group-lg">
-      <button type="button" class="active btn btn-default" ng-href="/interests">1</button>
-      <button type="button" class="btn btn-default" ng-href="/foods">2</button>
+      <a class="active btn btn-default" ng-href="#/interests">1</a>
+      <a class="btn btn-default" ng-href="#/foods" ng-click="updateInterests()">2</a>
     </div>
     <div class="btn-group btn-group-lg">
-      <button type="button" class="btn btn-default" ng-href="/foods">Next</button>
+      <a class="btn btn-default" ng-href="#/foods" ng-click="updateInterests()">Next</a>
     </div>
   </div>
 </div>
