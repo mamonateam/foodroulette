@@ -10,7 +10,7 @@ angular
     'LocalStorageModule'
   ])
 
-  .constant('PATHS', {    
+  .constant('PATHS', {
 		LOGIN: '/login',
     LOGIN_MD5: '/login/:md5',
 		INTERESTS: '/interests',
