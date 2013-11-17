@@ -41,10 +41,13 @@ public class foodroulette extends CordovaActivity
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
 
                 if(url.contains("http://localhost:9000/#/login")) {
-                     url = url.replace("http://localhost:9000/", "file:///android_asset/www/index.html)");
+                	 String md5_hash = url.replace("http://localhost:9000/", "");
+                     url = "file:///android_asset/www/index.html";
+                     view.loadUrl("javascript:window.location.href = '"+md5_hash+"';");
                      Log.d("DEBUG", url);
                      return true;
                 } else {
+                	Log.d("DEBUG", url);
                 	//view.loadUrl(url);
                 	return super.shouldOverrideUrlLoading(view, url);
                 }
