@@ -89,6 +89,10 @@ body {
     }
 }
 
+.p10 {
+    padding: 10px;
+}
+
 .p50 {
     padding: 50px;
 }
@@ -261,8 +265,7 @@ input.card.form-control {
     &.front {
         position: absolute;
         z-index: 2;
-        width: 93%;
-        top: 90px;
+        top: 80px;
     }
 
     &.back {
