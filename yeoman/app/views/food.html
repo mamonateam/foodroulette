@@ -13,11 +13,11 @@
 </div>
 
 <div>
-  <div ng-repeat="(interest, selected) in interests | filter:search" class="input-group input-group-lg card shadow mt10">
-    <div class="form-control no-rounded">{{interest}}</div>
+  <div ng-repeat="food in foods | filter:search" class="input-group input-group-lg card shadow mt10">
+    <div class="form-control no-rounded">{{food.title}}</div>
     <span class="input-group-btn">
-      <button ng-click="enable(interest)" ng-hide="selected" class="btn btn-default no-rounded" type="button">+</button>
-      <button ng-click="disable(interest)" ng-show="selected" class="btn btn-default no-rounded green-btn" type="button">✓</button>
+      <button ng-click="enable(food)" ng-hide="food.status" class="btn btn-default no-rounded" type="button">+</button>
+      <button ng-click="disable(food)" ng-show="food.status" class="btn btn-default no-rounded green-btn" type="button">✓</button>
     </span>
   </div>
 </div>
