@@ -79,7 +79,6 @@ body {
 
 .card {
     background-color: $white;
-    padding: 50px;
 
     .logo {
         width: 50%;
@@ -88,6 +87,14 @@ body {
             margin-top: -50px;
         }
     }
+}
+
+.p50 {
+    padding: 50px;
+}
+
+.mt10 {
+    margin-top: 10px;
 }
 
 .yammer-logo {
@@ -109,6 +116,26 @@ body {
 
 .shadowed {
     @include single-box-shadow;
+}
+
+.shadow {
+    @include box-shadow(#777 0px 3px 1px 0px);
+}
+
+.no-rounded {
+    border-radius: 0 !important;
+}
+
+.green-btn {
+    background-color: green;
+    color: darkgreen;
+    border-color: darkgreen;
+}
+
+input.card.form-control {
+    border-radius: 0;
+    // font-size: 20px;
+    // padding: 30px;
 }
 
 /* Responsive: Portrait tablets and up */
