@@ -7,7 +7,6 @@ angular.module('foodroulette', [
   'ngRoute'
 ])
 	.constant('PATHS', {
-		ROOT: '/',
 		LOGIN: '/login',
 		INTERESTS: '/interests',
 		FOOD: '/food',
@@ -19,10 +18,6 @@ angular.module('foodroulette', [
   })
   .config(function ($routeProvider, PATHS) {
     $routeProvider
-      .when(PATHS.ROOT, { 
-      	templateUrl: 'views/main.html', 
-      	controller: 'MainCtrl' 
-      })
       .when(PATHS.LOGIN, {
       	templateUrl: 'views/login.html',
       	controller: 'LoginCtrl'
