@@ -8,13 +8,18 @@ angular.module('foodroulette')
 				$location.path(PATHS.LOGIN);
 			});
 
+      // Fake!!!!
+      $scope.me = {
+        food_roulette: { imin: false }
+      };
+
 			// $scope.me.food_roulette.imin will hold if user is in
 			$scope.imin = function(bool) {
 				$scope.me.food_roulette.imin = bool;
-				$http.post(CONFIG.backend + '/roulette',
-					{
-						data: { imin: bool }
-					});
+				$http.post(
+          CONFIG.backend + '/roulette',
+					{ data: { imin: bool } }
+        );
 			}
 		}
 	]);
