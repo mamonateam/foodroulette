@@ -9907,9 +9907,15 @@ input.card.form-control {
   border-radius: 0;
 }
 
+/* line 164, ../../app/styles/main.scss */
+
+.logout {
+  margin-top: 40px;
+}
+
 /* Yammer log-in button */
 
-/* line 166, ../../app/styles/main.scss */
+/* line 169, ../../app/styles/main.scss */
 
 .sign-in {
   border-radius: 3px;
@@ -9947,20 +9953,20 @@ input.card.form-control {
   font-size: 1.5em;
 }
 
-/* line 206, ../../app/styles/main.scss */
+/* line 209, ../../app/styles/main.scss */
 
 .sign-in:hover {
   color: #fff;
   text-decoration: none;
 }
 
-/* line 212, ../../app/styles/main.scss */
+/* line 215, ../../app/styles/main.scss */
 
 .card.roulette-card {
   padding: 10px;
 }
 
-/* line 216, ../../app/styles/main.scss */
+/* line 219, ../../app/styles/main.scss */
 
 .card.roulette-card .basic img {
   width: 40%;
@@ -9968,7 +9974,7 @@ input.card.form-control {
   vertical-align: top;
 }
 
-/* line 221, ../../app/styles/main.scss */
+/* line 224, ../../app/styles/main.scss */
 
 .card.roulette-card .basic .basic-data {
   width: 58%;
@@ -9976,43 +9982,43 @@ input.card.form-control {
   vertical-align: top;
 }
 
-/* line 228, ../../app/styles/main.scss */
+/* line 231, ../../app/styles/main.scss */
 
 .card.roulette-card .message {
   padding-top: 10px;
 }
 
-/* line 230, ../../app/styles/main.scss */
+/* line 233, ../../app/styles/main.scss */
 
 .card.roulette-card .message textarea {
   margin-bottom: 10px;
 }
 
-/* line 233, ../../app/styles/main.scss */
+/* line 236, ../../app/styles/main.scss */
 
 .card.roulette-card .message button {
   width: 48%;
 }
 
-/* line 235, ../../app/styles/main.scss */
+/* line 238, ../../app/styles/main.scss */
 
 .card.roulette-card .message button:last-child {
   margin-left: 2.5%;
 }
 
-/* line 242, ../../app/styles/main.scss */
+/* line 245, ../../app/styles/main.scss */
 
 .card.roulette-card .interests .interests-wrapper {
   overflow: hidden;
 }
 
-/* line 245, ../../app/styles/main.scss */
+/* line 248, ../../app/styles/main.scss */
 
 .card.roulette-card .interests .interests-wrapper.collapsed {
   height: 70px;
 }
 
-/* line 250, ../../app/styles/main.scss */
+/* line 253, ../../app/styles/main.scss */
 
 .card.roulette-card .interests .interest {
   padding: 5px;
@@ -10024,13 +10030,13 @@ input.card.form-control {
   color: white;
 }
 
-/* line 259, ../../app/styles/main.scss */
+/* line 262, ../../app/styles/main.scss */
 
 .card.roulette-card .interests .interest:nth-child(even) {
   margin-left: 2%;
 }
 
-/* line 265, ../../app/styles/main.scss */
+/* line 268, ../../app/styles/main.scss */
 
 .card.roulette-card.front {
   position: absolute;
@@ -10038,7 +10044,7 @@ input.card.form-control {
   top: 80px;
 }
 
-/* line 271, ../../app/styles/main.scss */
+/* line 274, ../../app/styles/main.scss */
 
 .card.roulette-card.back {
   margin-left: 10px;
@@ -10046,7 +10052,7 @@ input.card.form-control {
 }
 
 @media screen and (max-width: 480px) {
-  /* line 278, ../../app/styles/main.scss */
+  /* line 281, ../../app/styles/main.scss */
 
   .sign-in {
     font-size: 1.1em;
@@ -10058,7 +10064,7 @@ input.card.form-control {
 /* Responsive: Portrait tablets and up */
 
 @media screen and (min-width: 768px) {
-  /* line 287, ../../app/styles/main.scss */
+  /* line 290, ../../app/styles/main.scss */
 
   .container {
     max-width: 730px;
@@ -10066,7 +10072,7 @@ input.card.form-control {
 
   /* Remove the padding we set earlier */
 
-  /* line 294, ../../app/styles/main.scss */
+  /* line 297, ../../app/styles/main.scss */
 
   .header,
   .marketing,
@@ -10077,7 +10083,7 @@ input.card.form-control {
 
   /* Space out the masthead */
 
-  /* line 299, ../../app/styles/main.scss */
+  /* line 302, ../../app/styles/main.scss */
 
   .header {
     margin-bottom: 30px;
@@ -10085,7 +10091,7 @@ input.card.form-control {
 
   /* Remove the bottom border on the jumbotron for visual effect */
 
-  /* line 303, ../../app/styles/main.scss */
+  /* line 306, ../../app/styles/main.scss */
 
   .jumbotron {
     border-bottom: 0;
