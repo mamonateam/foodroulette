@@ -1,21 +1,31 @@
 'use strict';
 
-angular.module('foodroulette', [
-  'ngCookies',
-  'ngResource',
-  'ngSanitize',
-  'ngRoute'
-])
-	.constant('PATHS', {
+angular
+  .module('foodroulette', [
+    'ngCookies',
+    'ngResource',
+    'ngSanitize',
+    'ngRoute'
+  ])
+
+  .constant('PATHS', {
 		LOGIN: '/login',
 		INTERESTS: '/interests',
 		FOOD: '/food',
 		IMIN: '/imin',
 		ROULETTE: '/roulette'
 	})
+
   .constant('CONFIG', {
-    backend: 'http://ch-foodroulette.herokuapp.com/'
+    backend: 'http://ch-foodroulette.herokuapp.com/api'
   })
+
+  .config(['$httpProvider',function(provider){
+    provider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
+    provider.defaults.useXDomain = true;
+    delete provider.defaults.headers.common['X-Requested-With'];
+  }])
+
   .config(function ($routeProvider, PATHS) {
     $routeProvider
       .when(PATHS.LOGIN, {

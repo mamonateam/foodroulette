@@ -4,7 +4,10 @@ angular.module('foodroulette')
       var me;
 
     function getMe() {
-      return me || me = $http.get({url: CONFIG.backend + "/user/me"});
+      if(me)
+        return me;
+      else
+      return me = $http.get(CONFIG.backend + "/user/me");
     }
 
     function setMe(mod_me) {
@@ -19,7 +22,7 @@ angular.module('foodroulette')
       return $http.post({
         url: CONFIG.backend + "/user/register",
         data: {
-          yammer_id: yammer_user_id,        
+          yammer_id: yammer_user_id,
           token: token
         }
       });
@@ -29,7 +32,7 @@ angular.module('foodroulette')
       return $http.post({
         url: CONFIG.backend + "/user/me",
         data: me
-      });  
+      });
     }
 
     return {
@@ -39,7 +42,7 @@ angular.module('foodroulette')
       getUser: getUser,
       // registers token
       sendToken: sendToken,
-      /* update - updates information contained in the service */ 
+      /* update - updates information contained in the service */
       update: update
     };
   }
