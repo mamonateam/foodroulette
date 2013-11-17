@@ -1,0 +1,35 @@
+<h1 class='centered text-shadow'>Interests</h1>
+
+<div class="input-group input-group-lg card shadow">
+  <span class="input-group-addon no-rounded">
+    <span class="glyphicon glyphicon-search"></span>
+  </span>
+
+  <input class="form-control no-rounded" ng-model="search" placeholder="Search...">
+
+  <span class="input-group-btn" ng-show="search">
+    <button ng-click="search=''" class="btn btn-default no-rounded" type="button">&times;</button>
+  </span>
+</div>
+
+<div>
+  <div ng-repeat="interest in interests | filter:search | orderBy:'title'" class="input-group input-group-lg card shadow mt10">
+    <div class="form-control no-rounded">{{interest.title}}</div>
+    <span class="input-group-btn">
+      <button ng-click="enable(interest)" ng-hide="interest.status" class="btn btn-default no-rounded" type="button">+</button>
+      <button ng-click="disable(interest)" ng-show="interest.status" class="btn btn-default no-rounded green-btn" type="button">✓</button>
+    </span>
+  </div>
+</div>
+
+<div id="interest-controls" class="mt20 pull-right">
+  <div class="btn-toolbar" role="toolbar">
+    <div class="btn-group btn-group-lg">
+      <a class="active btn btn-default" ng-href="#/interests">1</a>
+      <a class="btn btn-default" ng-href="#/food" ng-click="updateInterests()">2</a>
+    </div>
+    <div class="btn-group btn-group-lg">
+      <a class="btn btn-default" ng-href="#/food" ng-click="updateInterests()">Next</a>
+    </div>
+  </div>
+</div>
