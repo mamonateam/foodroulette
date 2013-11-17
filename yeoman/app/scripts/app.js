@@ -20,7 +20,7 @@ angular
 	})
 
   .constant('CONFIG', {
-    backend: 'http://ch-foodroulette.herokuapp.com/api'
+    backend: 'http://ch-foodroulette.herokuapp.com/api/v1'
   })
 
   .factory('foodrouletteInterceptor', ['$q', '$location', 'PATHS', 'localStorageService',
