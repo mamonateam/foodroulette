@@ -1,10 +1,12 @@
 angular.module('foodroulette')
-.controller('LoginCtrl', ['$scope', function ($scope) {
+	.controller('LoginCtrl', ['$scope', '$routeParams', '$location', 'localStorageService', 'PATHS',
+		function ($scope, $routeParams, $location, localStorageService, PATHS) {
 
-  //Init Yammer login button
-  yam.connect.loginButton('#yammer-login', function (resp) {
-    if (resp.authResponse)
-      document.getElementById('yammer-login').innerHTML = 'Welcome to Yammer!';
-  });
+			if($routeParams.md5) {
+				console.log("md5 received from Yammer: " + $routeParams.md5);
+				localStorageService.add('md5',$routeParams.md5);
+				$location.path(PATHS.INTERESTS);
+			}
 
-}]);
+		}
+	]);
