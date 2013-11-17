@@ -6,7 +6,7 @@
 <div style="position: relative">
   <div class="card shadow mt10 roulette-card" ng-class="{front: friend.primary, back: !friend.primary}" ng-click="setPrimary(friend)" ng-repeat="friend in friends">
     <div class="basic">
-      <img ng-src="{{friend.picture}}" class="img-thumbnail">
+      <img ng-src="{{friend.mugshot_url}}" class="img-thumbnail">
       <div class="basic-data">
         <h3><strong>{{friend.name}}</strong></h3>
         <p>{{friend.department}}</p>

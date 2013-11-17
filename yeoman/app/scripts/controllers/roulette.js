@@ -1,20 +1,28 @@
 angular.module('foodroulette')
-.controller('RouletteCtrl', ['$scope', function ($scope) {
+.controller('RouletteCtrl', ['$scope', 'FRUser', 'FRRoulette', function ($scope, FRUser, FRRoulette) {
 
-  $scope.friends = [
-    {
-      name: 'WAT Juakinee',
-      department: 'Orly Relationships',
-      picture: 'http://static4.fjcdn.com/comments/Somebody+call+the+sWAT+team+someone+just+broke+the+law+_ee96a5b72089d1478b85c02ec7d1451b.jpg',
-      interests: ['Sky surfing', 'Guacamole', 'Lentejas', 'King of Fighters', 'Tennis', 'Whales', 'Folsom Fair', 'Bridges']
-    },
-    {
-      name: 'IDC Ming',
-      department: 'Hackathon Engineering',
-      picture: 'http://images.wikia.com/regularshow/es/images/b/b6/Meme-white_00242335.jpg',
-      interests: ['Sky surfing', 'Guacamole', 'Lentejas', 'King of Fighters', 'Tennis', 'Whales', 'Folsom Fair', 'Bridges']
-    }
-  ];
+  $scope.friends = [];
+
+  var primary_chosen = false;
+
+  var replaceSize = function(tmp, width, height) {
+    return tmp.replace('{width}', width).replace('{height}', height);
+  };
+
+  FRRoulette.getStatus().success(function(data) {
+    if(data.is_ready)
+      angular.forEach(data.user_ids, function(id) {
+        FRUser.getUser(id).success(function(data) {
+          console.log('the user', data);
+          if(!primary_chosen){
+            data.primary = true;
+            primary_chosen = true;
+          }
+          data.mugshot_url = replaceSize(data.mugshot_url_template, 200, 200);
+          $scope.friends.push(data);
+        });
+      });
+  });
 
   $scope.setPrimary = function(friend) {
     if(friend.primary)
@@ -28,6 +36,4 @@ angular.module('foodroulette')
 
     friend.primary = true;
   };
-
-  $scope.setPrimary($scope.friends[0]);
 }]);

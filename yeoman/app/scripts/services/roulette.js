@@ -1,13 +1,13 @@
 angular.module('foodroulette')
-.factory('FRRoulette', ['$http', function ($http) {
+.factory('FRRoulette', ['$http', 'CONFIG', function ($http, CONFIG) {
 
   return {
     // GET /roulette
     // returns:
-    // - (bool) false: In register process
     // - (Array[user_ids]): roulette resolved
-    getStatus: function() {},
-    // I'm in (yes/no)
-    imIn: function(bool) {}
+    getStatus: function() {
+      return $http.get(CONFIG.backend + "/roulette");
+    }
+
   };
 }]);
