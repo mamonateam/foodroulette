@@ -29,10 +29,10 @@ angular
       'request': function(config) {
         var md5 = LocalStorage.get('md5');
 
-        if(md5 && angular.isObject(config.data))
+        if(md5)
           config.url += "?token_md5=" + md5;
 
-        console.log('read md5:', md5);
+        // console.log('read md5:', md5);
 
         return config || $q.when(config);
       },
