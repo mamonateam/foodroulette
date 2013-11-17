@@ -1,70 +1,41 @@
 'use strict';
 
 angular.module('foodroulette')
-	.controller('FoodCtrl', ['$scope', 'FRUser',
-		function($scope, FRUser) {
-			var fake_foods = [
-				{
-					title: "Indian",
-					status: true
-				},
-				{
-					title: "Vegetarian",
-					status: true
-				},
-				{
-					title: "Italian",
-					status: true
-				},
-				{
-					title: "Mexican",
-					status: false
-				},
-				{
-					title: "Spanish",
-					status: false
-				},
-				{
-					title: "Cuban",
-					status: true
-				}
-			];
+	.controller('FoodCtrl', ['$scope', '$http', '$location', 'FRUser',
 
-			var me = {
-				food_roulette: {
-					food_interests: []
-				}
-			};
-
-			/*
+    function($scope, $http, $location, FRUser) {
+      var me;
 			// We get all available food list
-			$http.get({url: "scripts/fakedata/foods.json"}).then(function(allFoods) {
+			$http.get('scripts/fakedata/foods.json').then(function(response) {
+        var allFoods = response.data;
+
 				// We get user food interests
 				FRUser.get().then(function(user) {
-					me = user;
-
-					if(user && user.food_roulette && user.food_roulette.food_interests) {
-						$scope.foods = {};
+          if(user) {
+            me = user;
+						$scope.foods = [];
 						// convert from array structure to object array structure
-						for(var i = 0;i<allFoods.length;i++) {
+            angular.forEach(allFoods, function(food) {
 							$scope.foods.push({
-								title: allFoods[i],
-								status: _.contains(user.food_roulette.food_interests, allFoods[i]);
-							})
-						}
+								title: food,
+								status: _.contains(me.food_roulette.food_preferences, food)
+							});
+						});
 					}
 				});
 			});
-			*/
 
 			$scope.save = function() {
-				angular.forEach($scope.foods, function(food) {
-					me.food_roulette.food_interests = [];
+				me.food_roulette.food_preferences = [];
+
+        angular.forEach($scope.foods, function(food) {
 					if(food.status)
-						me.food_roulette.food_interests.push(food.title);
+						me.food_roulette.food_preferences.push(food.title);
 				});
-				console.log('updating', me, 'and saving...');
-				FRUser.update();
+
+        FRUser.update().success(function() {
+          $location.path('/');
+        });
 			}
 
 			$scope.enable = function(food) {
@@ -74,8 +45,5 @@ angular.module('foodroulette')
 			$scope.disable = function(food) {
 				food.status = false;
 			};
-
-			// Init
-			$scope.foods = fake_foods;
 		}
 	]);
