@@ -14,6 +14,9 @@ angular.module('foodroulette', [
 		IMIN: '/imin',
 		ROULETTE: '/roulette'
 	})
+  .constant('CONFIG', {
+    backend: 'http://ch-foodroulette.herokuapp.com/'
+  })
   .config(function ($routeProvider, PATHS) {
     $routeProvider
       .when(PATHS.ROOT, { 
