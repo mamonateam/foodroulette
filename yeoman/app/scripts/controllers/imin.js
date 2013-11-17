@@ -4,9 +4,7 @@ angular.module('foodroulette')
 	.controller('ImInCtrl', ['$scope', '$location','FRUser', 'PATHS', 'CONFIG',
 		function($scope, $location, FRUser, PATHS, CONFIG) {
 			// Are we logged in? if not we move to login screen
-			$scope.me = FRUser.get().error(function() {
-				$location.path(PATHS.LOGIN);
-			});
+			$scope.me = FRUser.get();
 
       // Fake!!!!
       $scope.me = {

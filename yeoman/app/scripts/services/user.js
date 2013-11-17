@@ -10,10 +10,6 @@ angular.module('foodroulette')
       return me = $http.get(CONFIG.backend + "/user/me");
     }
 
-    function setMe(mod_me) {
-      return me = mod_me;
-    }
-
     function getUser(id) {
       return $http.get({url: CONFIG.backend + "/user/" + id});
     }
@@ -38,7 +34,6 @@ angular.module('foodroulette')
     return {
       // if id is null returns 'me'
       get: getMe,
-      set: setMe,
       getUser: getUser,
       // registers token
       sendToken: sendToken,
