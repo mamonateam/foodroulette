@@ -1,4 +1,25 @@
-<h1 class='centered text-shadow'>Result</h1>
-
-<div class="card shadow">
+<div class="card shadow mt10 roulette-card" ng-class="{front: friend.primary, back: !friend.primary}" ng-click="setPrimary(friend)" ng-repeat="friend in friends">
+  <div class="basic">
+    <img ng-src="{{friend.picture}}" class="img-thumbnail">
+    <div class="basic-data">
+      <h3><strong>{{friend.name}}</strong></h3>
+      <p>{{friend.department}}</p>
+      <button type="button" class="btn btn-success block" ng-show="!friend.messaging" ng-click="friend.messaging = true">Send Message</button>
+    </div>
+    <div class="message" ng-show="friend.messaging">
+      <textarea class="form-control" rows="4"></textarea>
+      <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> Send</button>
+      <button type="button" class="btn btn-danger" ng-click="friend.messaging = false"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+    </div>
+  </div>
+  <hr>
+  <h3>Interests</h3>
+  <div class="interests card">
+    <div class="interests-wrapper" ng-class="{collapsed: !friend.expandInterests}">
+      <div class="interest" ng-repeat="interest in friend.interests">{{interest}}</div>
+    </div>
+    <button class="btn btn-active centered no-rounded block btn-sm" ng-click="friend.expandInterests = true" ng-hide="friend.expandInterests"><span class="glyphicon glyphicon-chevron-down"></span></button>
+  </div>
+  <!-- <hr> -->
+  <h3>Ice Breaking News</h3>
 </div>
