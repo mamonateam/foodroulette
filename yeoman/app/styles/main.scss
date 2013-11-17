@@ -6,6 +6,10 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 $white: #FFF;
 
+*:focus {
+    outline: none !important;
+}
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -84,7 +88,7 @@ body {
         width: 50%;
         &.nomargins {
             margin-bottom: -20px;
-            margin-top: -50px;
+            margin-top: -30px;
         }
     }
 }

@@ -51,3 +51,4 @@ IOS/www/
 
 # www folder in project
 www/*
+platform/android/assets/www/*

@@ -33,8 +33,6 @@ angular
         if(md5)
           config.url += "?token_md5=" + md5;
 
-        // console.log('read md5:', md5);
-
         return config || $q.when(config);
       },
 
