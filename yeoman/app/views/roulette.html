@@ -28,7 +28,10 @@
     </div>
     <!-- <hr> -->
     <h3>Ice Breaking News</h3>
-
+    <div class="centered" ng-repeat="n in friend.news">
+      <a ng-href="{{n.url}}" target="_blank">{{n.title}}</a>
+      <hr>
+    </div>
     <small class="pull-right">Powered by <span class="text-hide bing-logo">Bing</span></small>
   </div>
 </div>

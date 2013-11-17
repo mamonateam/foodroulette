@@ -32,6 +32,9 @@ angular.module('foodroulette')
             primary_chosen = true;
           }
           data.mugshot_url = replaceSize(data.mugshot_url_template, 200, 200);
+          $http.get(CONFIG.backend + '/news/' + id).success(function(n) {
+            data.news = n;
+          });
           $scope.friends.push(data);
         });
       });

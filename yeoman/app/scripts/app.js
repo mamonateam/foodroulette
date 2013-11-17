@@ -22,7 +22,7 @@ angular
 
   .constant('CONFIG', {
     backend: 'http://ch-foodroulette.herokuapp.com/api/v1',
-    pollTime: 2000000
+    pollTime: 5000
   })
 
   .factory('foodrouletteInterceptor', ['$q', '$location', 'PATHS', 'localStorageService',
