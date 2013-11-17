@@ -97,6 +97,10 @@ body {
     margin-top: 10px;
 }
 
+.mt20 {
+    margin-top: 20px;
+}
+
 .yammer-logo {
     background: url("/images/yammer-logo.png") no-repeat center center;
     display: inline-block;
@@ -122,6 +126,10 @@ body {
     @include box-shadow(#777 0px 3px 1px 0px);
 }
 
+.text-shadow {
+    @include text-shadow(#ccc 0px 3px 2px);
+}
+
 .no-rounded {
     border-radius: 0 !important;
 }
@@ -136,6 +144,9 @@ input.card.form-control {
     border-radius: 0;
     // font-size: 20px;
     // padding: 30px;
+}
+
+#interest-controls {
 }
 
 /* Responsive: Portrait tablets and up */
